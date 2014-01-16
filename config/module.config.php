@@ -64,6 +64,16 @@ return array(
                     'JaztecAclAdmin.controller' => __DIR__ . '/../public/js/jaztecacladmin/controller',
                 ),
             ),
+            'stores'      => array(
+
+            ),
+            'views'       => array(
+                'JaztecAclAdmin.controller.AclAdmin' => array(
+                    'paths'      => array(
+                        'JaztecAclAdmin.view' => __DIR__ . '/../public/js/jaztecacladmin/view',
+                    ),
+                ),
+            ),
         ),
     ),
     /**
