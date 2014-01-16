@@ -7,13 +7,6 @@ return array(
      * KJ Sencha config.
      */
     'kjsencha'        => array(
-        'library_path' => 'http://cdn.sencha.io/ext-4.2.0-gpl/',
-        'js'           => array(
-            'ext' => 'ext-all.js',
-        ),
-        'css'          => array(
-            'ext' => 'resources/css/ext-all-gray.css',
-        ),
         'direct'       => array(
             'modules' => array(
                 'JaztecAclAdmin' => array(
@@ -26,8 +19,12 @@ return array(
             'default' => array(
                 'modules'   => array(
                     'JaztecAclAdmin' => array(
-                        'namespace' => 'JaztecAdmin.direct'
+                        'namespace' => 'JaztecAclAdmin.direct'
                     ),
+                ),
+                // Ext.Ux classes toevoegen aan de autoloader.
+                'paths'     => array(
+                    'JaztecAclAdmin' => '/js/jaztecacladmin',
                 ),
             ),
         ),
