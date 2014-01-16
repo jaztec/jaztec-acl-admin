@@ -16,7 +16,7 @@ Ext.define('JaztecAclAdmin.controller.AclAdmin', {
 
     /**
      * This function adds the visual components to the application
-     * after all dependancies have been loaded.
+     * after all dependencies have been loaded.
      * @returns {undefined}
      */
     registerControls: function()
