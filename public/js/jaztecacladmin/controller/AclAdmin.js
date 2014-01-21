@@ -1,9 +1,7 @@
 Ext.define('JaztecAclAdmin.controller.AclAdmin', {
     extend: 'JaztecAdmin.app.Module',
     stores: [],
-    views: [
-//        'JaztecAclAdmin.view.main.Panel'
-    ],
+    views: [],
     refs: [
         {ref: 'moduleMain', selector: 'jaztecacladmin-mainPanel'}
     ],
@@ -25,10 +23,9 @@ Ext.define('JaztecAclAdmin.controller.AclAdmin', {
         if (me.isRegistered()) {
             return;
         }
-        me.addCard({
-            xtype: 'jaztecacladmin-mainPanel'
-//            xtype: 'panel'
-        });
+        var card = Ext.create('JaztecAclAdmin.view.main.Panel');
+        card.setUp(me);
+        me.addCard(card);
         me.addToolItem(1, {
             text: 'ACL Control',
             iconCls: 'icon-security-large'
