@@ -1,11 +1,17 @@
 Ext.define('JaztecAclAdmin.view.main.Panel', {
-    extend: 'JaztecAdmin.view.base.editor.MasterDetail',
+    extend: 'JaztecAdmin.view.base.panel.ToolbarPanel',
     alias: 'widget.jaztecacladmin-mainPanel',
     layout: 'border',
     items: [],
 
     requires: [
         'JaztecAclAdmin.model.Resource'
+    ],
+
+    toolItems: [
+        {
+            text: 'dit is al iets!'
+        }
     ],
 
     initComponent: function()

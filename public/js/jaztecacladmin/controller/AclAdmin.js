@@ -24,7 +24,6 @@ Ext.define('JaztecAclAdmin.controller.AclAdmin', {
             return;
         }
         var card = Ext.create('JaztecAclAdmin.view.main.Panel');
-        card.setUp(me);
         me.addCard(card);
         me.addToolItem(1, {
             text: 'ACL Control',
