@@ -65,7 +65,11 @@ return array(
                 ),
             ),
             'stores'      => array(
-
+                'JaztecAclAdmin.controller.AclAdmin' => array(
+                    'paths'      => array(
+                        'JaztecAclAdmin.store' => __DIR__ . '/../public/js/jaztecacladmin/store',
+                    ),
+                ),
             ),
             'views'       => array(
                 'JaztecAclAdmin.controller.AclAdmin' => array(
@@ -79,10 +83,6 @@ return array(
     /**
      * Futher confuguration.
      */
-    'service_manager' => array(
-        'factories' => array(
-        ),
-    ),
     'doctrine'        => array(
         'driver' => array(
             'jaztecadmin_driver' => array(
