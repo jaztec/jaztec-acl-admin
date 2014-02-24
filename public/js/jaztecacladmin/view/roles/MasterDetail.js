@@ -7,5 +7,6 @@ Ext.define('JaztecAclAdmin.view.roles.MasterDetail', {
         var me = this;
 
         me.callParent(arguments);
+        debugger;
     }
 });

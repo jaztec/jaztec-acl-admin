@@ -6,10 +6,12 @@ use Zend\ModuleManager\ModuleManager;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\ServiceProviderInterface;
+use Zend\ModuleManager\Feature\ControllerProviderInterface;
 
 class Module implements
     AutoloaderProviderInterface,
     ConfigProviderInterface,
+    ControllerProviderInterface,
     ServiceProviderInterface
 {
 
@@ -48,4 +50,11 @@ class Module implements
         return include __DIR__ . '/../../config/service.config.php';
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function getControllerConfig()
+    {
+        return require __DIR__ . '/../../config/controllers.config.php';
+    }
 }

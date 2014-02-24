@@ -1,8 +1,12 @@
 Ext.define('JaztecAclAdmin.store.roles.Main', {
     extend: 'Ext.data.Store',
-    model: 'JaztecAclAdmin.model.Resource',
+    model: 'JaztecAclAdmin.model.Role',
+    autoLoad: true,
     proxy: {
         type: 'ajax',
+        extraParams: {
+            type: 'roles'
+        },
         api: {
             create: '/jaztecacladmin-roles/create',
             read: '/jaztecacladmin-roles/read',

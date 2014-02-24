@@ -1,8 +1,12 @@
 Ext.define('JaztecAclAdmin.store.resources.Main', {
     extend: 'Ext.data.Store',
     model: 'JaztecAclAdmin.model.Resource',
+    autoLoad: true,
     proxy: {
         type: 'ajax',
+        extraParams: {
+            type: 'resources'
+        },
         api: {
             create: '/jaztecacladmin-resources/create',
             read: '/jaztecacladmin-resources/read',
