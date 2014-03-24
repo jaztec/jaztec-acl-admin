@@ -6,7 +6,7 @@ class PrivilegesController extends AbstractController
 {
 
     /**
-     * Will create an entity.
+     * {@inheritDoc}
      */
     public function createAction()
     {
@@ -14,7 +14,7 @@ class PrivilegesController extends AbstractController
     }
 
     /**
-     * Will read an entity
+     * {@inheritDoc}
      */
     public function readAction()
     {
@@ -22,7 +22,7 @@ class PrivilegesController extends AbstractController
     }
 
     /**
-     * Will update an entity
+     * {@inheritDoc}
      */
     public function updateAction()
     {
@@ -30,7 +30,7 @@ class PrivilegesController extends AbstractController
     }
 
     /**
-     * Will delete an entity
+     * {@inheritDoc}
      */
     public function destroyAction()
     {
