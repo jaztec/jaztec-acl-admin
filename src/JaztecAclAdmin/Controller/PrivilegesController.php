@@ -2,6 +2,8 @@
 
 namespace JaztecAclAdmin\Controller;
 
+use Zend\View\Model\JsonModel;
+
 class PrivilegesController extends AbstractController
 {
 
@@ -18,7 +20,18 @@ class PrivilegesController extends AbstractController
      */
     public function readAction()
     {
-        
+        /* @var $mapper \JaztecAclAdmin\Mapper\PrivilegesMapper */
+        $mapper = $this->getPrivilegesMapper();
+
+        $data = array();
+        $results = $mapper->findAll();
+
+        return new JsonModel(
+            array(
+                'success' => true,
+                'data'    => $results
+            )
+        );
     }
 
     /**

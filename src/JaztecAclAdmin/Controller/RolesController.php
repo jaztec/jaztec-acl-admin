@@ -2,6 +2,8 @@
 
 namespace JaztecAclAdmin\Controller;
 
+use Zend\View\Model\JsonModel;
+
 class RolesController extends AbstractController
 {
 
@@ -18,7 +20,17 @@ class RolesController extends AbstractController
      */
     public function readAction()
     {
-        
+        /* @var $mapper \JaztecAclAdmin\Mapper\RolesMapper */
+        $mapper = $this->getRolesMapper();
+
+        $results = $mapper->findAll();
+
+        return new JsonModel(
+            array(
+                'success' => true,
+                'data'    => $results
+            )
+        );
     }
 
     /**

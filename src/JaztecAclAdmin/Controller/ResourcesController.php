@@ -2,6 +2,8 @@
 
 namespace JaztecAclAdmin\Controller;
 
+use Zend\View\Model\JsonModel;
+
 class ResourcesController extends AbstractController
 {
 
@@ -18,7 +20,17 @@ class ResourcesController extends AbstractController
      */
     public function readAction()
     {
-        
+        /* @var $mapper \JaztecAclAdmin\Mapper\ResourcesMapper */
+        $mapper = $this->getResourcesMapper();
+
+        $results = $mapper->findAll();
+
+        return new JsonModel(
+            array(
+                'success' => true,
+                'data'    => $results
+            )
+        );
     }
 
     /**

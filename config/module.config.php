@@ -86,10 +86,10 @@ return array(
     'router'        => array(
         'routes' => array(
             'jaztecacladmin_roles'      => array(
-                'type'    => 'literal',
+                'type'    => 'segment',
                 'options' => array(
-                    'route'       => '/jaztecacladmin-roles/[:action]',
-                    'constraints' => array(
+                    'route'         => '/jaztecacladmin-roles/[:action]',
+                    'constraints'   => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                     ),
                     'defaults'    => array(
@@ -99,50 +99,31 @@ return array(
                 ),
             ),
             'jaztecacladmin_resources'  => array(
-                'type'    => 'literal',
+                'type'    => 'segment',
                 'options' => array(
                     'route'       => '/jaztecacladmin-resources/[:action]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                     ),
                     'defaults'    => array(
-                        'controller' => 'JaztecAclAdmin\Controller\Resources',
-                        'action'     => 'index',
+                        'controller'    => 'JaztecAclAdmin\Controller\Resources',
+                        'action'        => 'index',
                     ),
                 ),
             ),
             'jaztecacladmin_privileges' => array(
-                'type'    => 'literal',
+                'type'    => 'segment',
                 'options' => array(
                     'route'       => '/jaztecacladmin-privileges/[:action]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                     ),
                     'defaults'    => array(
-                        'controller' => 'JaztecAclAdmin\Controller\Privileges',
-                        'action'     => 'index',
+                        'controller'    => 'JaztecAclAdmin\Controller\Privileges',
+                        'action'        => 'index',
                     ),
                 ),
             ),
         ),
-    ),
-    /**
-     * Futher confuguration.
-     */
-    'doctrine'      => array(
-        'driver' => array(
-            'jaztecadmin_driver' => array(
-                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
-                'cache' => 'array',
-                'paths' => array(
-                    __DIR__ . '/../src/JaztecAdmin/Entity'
-                )
-            ),
-            'orm_default'        => array(
-                'drivers' => array(
-                    'JaztecAdmin\Entity' => 'jaztecadmin_driver'
-                )
-            )
-        )
     ),
 );
