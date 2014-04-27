@@ -38,6 +38,8 @@ Ext.define('JaztecAclAdmin.view.resources.MasterDetail', {
                     valueField: 'ResourceID',
                     displayField: 'Name',
                     allowBlank: true,
+                    forceSelection: true,
+                    mode: 'remote',
                     store: store
                 }
             ]

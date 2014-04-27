@@ -38,6 +38,8 @@ Ext.define('JaztecAclAdmin.view.roles.MasterDetail', {
                     valueField: 'RoleID',
                     displayField: 'Name',
                     allowBlank: true,
+                    forceSelection: true,
+                    mode: 'remote',
                     store: store
                 }
             ]

@@ -54,6 +54,8 @@ Ext.define('JaztecAclAdmin.view.privileges.MasterDetail', {
                     allowBlank: false,
                     valueField: 'type',
                     displayField: 'type',
+                    editable: false,
+                    forceSelection: true,
                     store: typesStore
                 },
                 {
@@ -69,6 +71,8 @@ Ext.define('JaztecAclAdmin.view.privileges.MasterDetail', {
                     valueField: 'RoleID',
                     displayField: 'Name',
                     allowBlank: true,
+                    forceSelection: true,
+                    mode: 'remote',
                     store: rolesStore
                 },
                 {
@@ -77,7 +81,9 @@ Ext.define('JaztecAclAdmin.view.privileges.MasterDetail', {
                     fieldLabel: 'Resource',
                     valueField: 'ResourceID',
                     displayField: 'Name',
+                    forceSelection: true,
                     allowBlank: true,
+                    mode: 'remote',
                     store: resourcesStore
                 }
             ]
