@@ -2,6 +2,7 @@ Ext.define('JaztecAclAdmin.view.privileges.MasterDetail', {
     extend: 'JaztecAdmin.view.base.editor.MasterDetail',
     alias: 'widget.jaztecacladmin-privileges-masterdetail',
 
+    masterDetailLayout: 'overview-center',
     masterCfg: {
         showDeleteButton: true,
         columns: [
@@ -13,7 +14,12 @@ Ext.define('JaztecAclAdmin.view.privileges.MasterDetail', {
             {
                 text: 'Role',
                 dataIndex: 'RoleName',
-                width: 45
+                flex: 1
+            },
+            {
+                text: 'Resource',
+                dataIndex: 'RoleName',
+                flex: 1
             },
             {
                 text: 'Privilege',
