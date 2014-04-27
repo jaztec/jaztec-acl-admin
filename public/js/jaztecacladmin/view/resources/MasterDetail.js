@@ -15,7 +15,11 @@ Ext.define('JaztecAclAdmin.view.resources.MasterDetail', {
     },
 
     detailCfg: {
-
+        formCfg: {
+            fieldDefaults: {
+                maxWidth: 500
+            }
+        }
     },
 
     initComponent: function()
