@@ -11,6 +11,15 @@ Ext.define('JaztecAclAdmin.view.main.Panel', {
     {
         var me = this,
             cards = [];
+//        // Create an empty card in front of the rest.
+//        cards.push({
+//            xtype: 'panel',
+//            layout: {
+//                type: 'fit',
+//                align: 'stretch'
+//            },
+//            items: []
+//        });
         // Create and add the cards.
         var roles = me.getRoleCard();
         cards.push(roles);

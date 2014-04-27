@@ -25,22 +25,22 @@ Ext.define('JaztecAclAdmin.view.roles.MasterDetail', {
 
         this.detailCfg = Ext.apply({
             fields: [
-            {
-                xtype: 'textfield',
-                name: 'Name',
-                fieldLabel: 'Name',
-                allowBlank: false
-            },
-            {
-                type: 'combobox',
-                name: 'ParentID',
-                fieldLabel: 'Parent',
-                valueField: 'RoleID',
-                displayField: 'Name',
-                allowBlank: true,
-                store: store
-            }
-        ]
+                {
+                    xtype: 'textfield',
+                    name: 'Name',
+                    fieldLabel: 'Name',
+                    allowBlank: false
+                },
+                {
+                    xtype: 'combobox',
+                    name: 'ParentID',
+                    fieldLabel: 'Parent',
+                    valueField: 'RoleID',
+                    displayField: 'Name',
+                    allowBlank: true,
+                    store: store
+                }
+            ]
         }, this.detailCfg);
 
         me.callParent(arguments);
