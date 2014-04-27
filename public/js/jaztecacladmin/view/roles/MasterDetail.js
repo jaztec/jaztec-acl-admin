@@ -20,7 +20,29 @@ Ext.define('JaztecAclAdmin.view.roles.MasterDetail', {
     
     initComponent: function()
     {
-        var me = this;
+        var me = this,
+            store = Ext.create('JaztecAclAdmin.store.roles.Main');
+
+        this.detailCfg = Ext.apply({
+            fields: [
+            {
+                xtype: 'textfield',
+                name: 'Name',
+                fieldLabel: 'Name',
+                allowBlank: false
+            },
+            {
+                type: 'combobox',
+                name: 'ParentID',
+                fieldLabel: 'Parent',
+                valueField: 'RoleID',
+                displayField: 'Name',
+                allowBlank: true,
+                store: store
+            }
+        ]
+        }, this.detailCfg);
+
         me.callParent(arguments);
     }
 });
