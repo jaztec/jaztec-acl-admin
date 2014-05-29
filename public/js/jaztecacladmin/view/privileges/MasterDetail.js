@@ -18,7 +18,7 @@ Ext.define('JaztecAclAdmin.view.privileges.MasterDetail', {
             },
             {
                 text: 'Resource',
-                dataIndex: 'RoleName',
+                dataIndex: 'ResourceName',
                 flex: 1
             },
             {
