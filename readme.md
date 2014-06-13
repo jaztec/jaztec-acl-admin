@@ -1,9 +1,22 @@
 JaztecAclAdmin
 ==============
 
-Admin ACL module for JaztecAcl component.
+Visual module JaztecAcl component inside JaztecAdmin.
+
+This repository is a work in progress. Currently no extensive unit testing or error handling
+is done. Please use with care.
+
+This package currently does not contain any installation script. You do however have
+to install the acl package. See below or the jaztec-acl package documentation.
+
+```sh
+./php public/index.php acl database clean-install --email=[your_email] [--verbose|-v]
+```
 
 ## Dependencies
 
+- rwoverdijk/assetmanager
+- rovak/kj-sencha
+- jaztec/jaztec-base
 - jaztec/jaztec-acl
 - jaztec/jaztec-admin
