@@ -14,7 +14,7 @@ class BaseMapper extends AbstractDoctrineMapper
     public function findAll()
     {
         return $this->processResult(
-            $this->getRepository()->findAll(), 
+            $this->getRepository()->findAll(),
             AbstractDoctrineMapper::TYPE_SERIALIZEDARRAY
         );
     }

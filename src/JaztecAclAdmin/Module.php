@@ -14,12 +14,6 @@ class Module implements
     ControllerProviderInterface,
     ServiceProviderInterface
 {
-
-    public function init(ModuleManager $moduleManager)
-    {
-        
-    }
-
     /**
      * {@inheritDoc}
      */
