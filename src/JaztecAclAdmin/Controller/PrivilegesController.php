@@ -23,7 +23,6 @@ class PrivilegesController extends AbstractController
         /* @var $mapper \JaztecAclAdmin\Mapper\PrivilegesMapper */
         $mapper = $this->getPrivilegesMapper();
 
-        $data = array();
         $results = $mapper->findAll();
 
         return new JsonModel(
@@ -48,5 +47,25 @@ class PrivilegesController extends AbstractController
     public function destroyAction()
     {
         
+    }
+
+    /**
+     * Find all requested privileges.
+     * 
+     * @return \Zend\View\Model\JsonModel
+     */
+    public function requestedAction()
+    {
+        /* @var $mapper \JaztecAclAdmin\Mapper\PrivilegesMapper */
+        $mapper = $this->getPrivilegesMapper();
+
+        $results = $mapper->findAllRequestedPrivileges();
+
+        return new JsonModel(
+            array(
+                'success' => true,
+                'data'    => $results
+            )
+        );
     }
 }

@@ -42,21 +42,25 @@ abstract class AbstractController extends AuthorizedController
     
     /**
      * Will create an entity.
+     * @return \Zend\View\Model\JsonModel
      */
     abstract public function createAction();
 
     /**
-     * Will read an entity
+     * Will read an entity.
+     * @return \Zend\View\Model\JsonModel
      */
     abstract public function readAction();
 
     /**
-     * Will update an entity
+     * Will update an entity.
+     * @return \Zend\View\Model\JsonModel
      */
     abstract public function updateAction();
 
     /**
      * Will delete an entity
+     * @return \Zend\View\Model\JsonModel
      */
     abstract public function destroyAction();
 

@@ -24,7 +24,8 @@
         "doctrine/migrations": "dev-master",
         "doctrine/data-fixtures": "dev-master",
         "jaztec/jaztec-base": "dev-master",
-        "jaztec/jaztec-acl": "dev-master"
+        "jaztec/jaztec-acl": "dev-master",
+	"jaztec/jaztec-admin": "dev-master"
     },
     "autoload": {
         "psr-0": {
