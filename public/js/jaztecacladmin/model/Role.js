@@ -1,3 +1,8 @@
+/**
+ * @class JaztecAclAdmin.model.Role
+ * Model configuration for Role
+ * @author Jasper van Herpt <jasper.v.herpt@gmail.com>
+ */
 Ext.define('JaztecAclAdmin.model.Role', {
     extend: 'Ext.data.Model',
     idProperty: 'RoleID',

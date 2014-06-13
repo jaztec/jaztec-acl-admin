@@ -1,3 +1,12 @@
+/**
+ * @class JaztecAclAdmin.controller.AclAdmin
+ * 
+ * Module to be housed inside the JaztecAdmin framework. Complies with the requested
+ * function registerControls which includes the toolbar item and card into the main
+ * frameworks toolbarpanel.
+ * 
+ * @author Jasper van Herpt <jasper.v.herpt@gmail.com>
+ */
 Ext.define('JaztecAclAdmin.controller.AclAdmin', {
     extend: 'JaztecAdmin.app.Module',
     stores: [],

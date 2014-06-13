@@ -1,3 +1,8 @@
+/**
+ * @class JaztecAclAdmin.view.resources.MasterDetail
+ * Master detail configuration for the resources
+ * @author Jasper van Herpt <jasper.v.herpt@gmail.com>
+ */
 Ext.define('JaztecAclAdmin.view.resources.MasterDetail', {
     extend: 'JaztecAdmin.view.base.editor.MasterDetail',
     alias: 'widget.jaztecacladmin-resources-masterdetail',

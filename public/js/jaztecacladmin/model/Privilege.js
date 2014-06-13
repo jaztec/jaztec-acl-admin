@@ -1,3 +1,8 @@
+/**
+ * @class JaztecAclAdmin.model.Privilege
+ * Model configuration for Privilege
+ * @author Jasper van Herpt <jasper.v.herpt@gmail.com>
+ */
 Ext.define('JaztecAclAdmin.model.Privilege', {
     extend: 'Ext.data.Model',
     idProperty: 'PrivilegeID',

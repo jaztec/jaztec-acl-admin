@@ -1,3 +1,8 @@
+/**
+ * @class JaztecAclAdmin.view.roles.MasterDetail
+ * Master detail configuration for the roles
+ * @author Jasper van Herpt <jasper.v.herpt@gmail.com>
+ */
 Ext.define('JaztecAclAdmin.view.roles.MasterDetail', {
     extend: 'JaztecAdmin.view.base.editor.MasterDetail',
     alias: 'widget.jaztecacladmin-roles-masterdetail',

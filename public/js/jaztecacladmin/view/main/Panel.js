@@ -1,3 +1,8 @@
+/**
+ * @class JaztecAclAdmin.view.main.Panel
+ * Main module view. Incorperates its own toolbar.
+ * @author Jasper van Herpt <jasper.v.herpt@gmail.com>
+ */
 Ext.define('JaztecAclAdmin.view.main.Panel', {
     extend: 'JaztecAdmin.view.base.panel.ToolbarPanel',
     alias: 'widget.jaztecacladmin-mainPanel',
@@ -11,15 +16,6 @@ Ext.define('JaztecAclAdmin.view.main.Panel', {
     {
         var me = this,
             cards = [];
-//        // Create an empty card in front of the rest.
-//        cards.push({
-//            xtype: 'panel',
-//            layout: {
-//                type: 'fit',
-//                align: 'stretch'
-//            },
-//            items: []
-//        });
         // Create and add the cards.
         var roles = me.getRoleCard();
         cards.push(roles);
