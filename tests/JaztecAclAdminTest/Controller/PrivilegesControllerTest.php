@@ -47,8 +47,8 @@ class PrivilegesControllerTest extends \PHPUnit_Framework_TestCase
         $this->controller = new PrivilegesController();
         $this->request    = new Request();
         $this->routeMatch = new RouteMatch(array(
-            'controller'    => 'JaztecAclAdmin\Controller\Privileges',
-            'action'        => 'index',
+            'controller' => 'JaztecAclAdmin\Controller\Privileges',
+            'action'     => 'index',
         ));
         $this->event      = new MvcEvent();
         $config           = $serviceManager->get('Config');
@@ -60,11 +60,23 @@ class PrivilegesControllerTest extends \PHPUnit_Framework_TestCase
         $this->event->setRouteMatch($this->routeMatch);
         $this->controller->setEvent($this->event);
         $this->controller->setServiceLocator($serviceManager);
-        
+
         // Arranging the zfc-user services.
         $userMock = $this->getMock('ZfcUser\Entity\User');
         $authMock = $this->getMock('ZfcUser\Controller\Plugin\ZfcUserAuthentication');
-        $this->controller->getPluginManager()->setService('zfcUserAuthentication', Bootstrap::provideLogin($userMock, $authMock, 'admin'));
+
+        // Setup a mock for a logged in user.
+        $userMock->expects($this->any())
+            ->method('getId')
+            ->will($this->returnValue('admin'));
+        $authMock->expects($this->any())
+            ->method('hasIdentity')
+            ->will($this->returnValue(true));
+        $authMock->expects($this->any())
+            ->method('getIdentity')
+            ->will($this->returnValue($userMock));
+
+        $this->controller->getPluginManager()->setService('zfcUserAuthentication', $authMock);
     }
 
     /**
@@ -80,4 +92,5 @@ class PrivilegesControllerTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(200, $response->getStatusCode());
     }
+
 }

@@ -183,32 +183,6 @@ class Bootstrap
         }
         $em->flush();
     }
-
-    /**
-     * @param mixed $userMock
-     * @param mixed $authMock
-     * @param string $roleId
-     * @return mixed
-     */
-    public static function provideLogin($userMock, $authMock, $roleId)
-    {
-        /* @var $em \Doctrine\ORM\EntityManager */
-        $em = static::getServiceManager()->get('doctrine.entitymanager.orm_default');
-
-        // Setup a mock for a logged in user.
-        $userMock->expects($this->any())
-                    ->method('getId')
-                    ->will($this->returnValue($roleId || 'registered'));
-
-        $authMock->expects($this->any())
-                 ->method('hasIdentity')
-                    -> will($this->returnValue(true));  
-        $authMock->expects($this->any())
-                 ->method('getIdentity')
-                 ->will($this->returnValue($userMock));
-
-        return $authMock;
-    }
 }
 
 Bootstrap::init();
