@@ -62,7 +62,9 @@ class PrivilegesControllerTest extends \PHPUnit_Framework_TestCase
         $this->controller->setServiceLocator($serviceManager);
         
         // Arranging the zfc-user services.
-        $this->controller->getPluginManager()->setService('zfcUserAuthentication', Bootstrap::provideLogin('admin'));
+        $userMock = $this->getMock('ZfcUser\Entity\User');
+        $authMock = $this->getMock('ZfcUser\Controller\Plugin\ZfcUserAuthentication');
+        $this->controller->getPluginManager()->setService('zfcUserAuthentication', Bootstrap::provideLogin($userMock, $authMock, 'admin'));
     }
 
     /**
@@ -71,6 +73,11 @@ class PrivilegesControllerTest extends \PHPUnit_Framework_TestCase
      */
     public function testIndexAction()
     {
-        
+        $this->routeMatch->setParam('action', 'index');
+
+        $result   = $this->controller->dispatch($this->request);
+        $response = $this->controller->getResponse();
+
+        $this->assertEquals(200, $response->getStatusCode());
     }
 }
